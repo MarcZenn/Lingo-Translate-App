@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var indexController = require('./controllers/index.js');
 var mongoose = require('mongoose')
-// var googleTranslate = require('google-translate')(apiKey);
+var googleTranslate = require('google-translate')('AIzaSyB45lmg3rb9SqYMqXoMjKbfI_DQghWvq1Y');
 
 
 var app = express();
@@ -15,7 +15,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get('/', indexController.index);
 
 
-app.post('/get-word', indexController.something)
+app.get('/translate', indexController.translate)
+// take form data here and build controller to send request data via AJAX to server. 
+// app.post('/get-word', indexController.something)
+
+
 
 var server = app.listen(8152, function() {
 	console.log('Express server listening on port ' + server.address().port);

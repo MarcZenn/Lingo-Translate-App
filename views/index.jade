@@ -8,13 +8,16 @@ block content
 		div
 			p What do you want to translate?
 			div.transInput 
-				form.transForm(action="/get-word", method='POST') 
-					input.textField(type="text", placeholder="words to be translated")
-					div.submitButton
-						input(type="submit")
+				form.transForm 
+					input(type="text", name="source" placeholder="translate from")
+					input(type="text", name="target", placeholder="translate to")
+					input.textField(type="text", name="q",placeholder="words to be translated")
+					input(type="submit")
 
-		div.transOutput
-			form.transForm(action="/get-word", method='POST')
-				input.textField(type="text")
-		div.clear		
+	.translation-container
+
+		//- div.transOutput
+		//- 	form.transForm(action="/get-word", method='POST')
+		//- 		input.textField(type="text")
+		//- div.clear		
 	

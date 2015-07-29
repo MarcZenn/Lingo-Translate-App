@@ -3,7 +3,9 @@
     "express": "^4",
     "jade": "^1",
     "body-parser": "^1",
-    "google-translate": "~1.0.0"
+    "google-translate": "~1.0.0",
+    "request": "~2.60.0",
+    "underscore": "~1.8.3"
   },
   "name": "Lingo-App",
   "version": "0.0.0",
