@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	h1.homeTitle Translater 
+
+	
+	div.transContainer
+		div
+			p.prompt What do you want to translate?
+			div.transInput 
+				form.transForm(action="/get-word", method='POST') 
+					input.textField(type="text", placeholder="words to be translated")
+					div.submitButton
+						input(type="submit")
+
+		div.transOutput
+			form.transForm(action="/get-word", method='POST')
+				input.textField(type="text")
+		div.clear		
+	
