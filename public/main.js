@@ -5,6 +5,7 @@
 
 $(function(){
 
+    // append p tags with translated words
 	function addTheTranslation(array) {
 
 		$('.translation-container').empty();
@@ -23,36 +24,32 @@ $(function(){
 		});
 	}
 
+    // on submit event of form
 	$('.transForm').on('submit',function(event){
 		event.preventDefault()
 		
-		// var data = {
-		// 	source : req.body.source,
-		// 	target : req.body.target,
-		// 	q      : req.body.q
-		// }
-
 		console.log($(this).serialize())
 
+        // ajax request to translate a word
 		$.ajax({
 			method : "GET",
 			url : "/translate", // route you define
-			data : 'key=AIzaSyB45lmg3rb9SqYMqXoMjKbfI_DQghWvq1Y&' + $(this).serialize(),
+			data :$(this).serialize() +  '&key=AIzaSyB45lmg3rb9SqYMqXoMjKbfI_DQghWvq1Y',
 			success : function(dataObj){
 
+                // Need to parse the string we get sent back into a js object
 				var obj = JSON.parse(dataObj);
 
 				// console.log(obj)
 				// console.log(obj.data)
 
 				var translationArray = obj.data.translations
-				console.log(translationArray)
+				// console.log(translationArray)
 
 				addTheTranslation(translationArray);
 
 				// console.log( translationArray)
-				// $('#translation').text(obj.)
 			}
-		})
-	})
-})
+		});
+	});
+});
