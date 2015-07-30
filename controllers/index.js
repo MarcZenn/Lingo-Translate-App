@@ -8,7 +8,7 @@ var indexController = {
 
 	translate : function(req,res){
 		var query = req.query
-		// console.log(query)
+		console.log(query)
 
 		// FIGHT!!!!  BEWARE, BELOW HACK CAUSED BY LACK OF WWW IN ORIGINAL URL
 			// DUMB
@@ -28,6 +28,7 @@ var indexController = {
 			if (!err && response.statusCode === 200) {
 				// console.log(response)
 				console.log(body)
+                //>send the body back to the ajax request
 				res.send(body);
 			}
 		})
