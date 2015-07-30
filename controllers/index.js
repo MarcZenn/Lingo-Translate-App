@@ -1,6 +1,10 @@
+
+//============================== Requirements ==============================//
+        
 var request = require('request')
 
-
+//============================== Index Controller ==============================//
+        
 var indexController = {
 	index: function(req, res) {
 		res.render('index');
@@ -33,18 +37,6 @@ var indexController = {
 			}
 		})
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 };
 
 module.exports = indexController;

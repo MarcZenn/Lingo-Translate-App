@@ -1,11 +1,13 @@
 
-
-
-
+//===========================================================================//
+                        /* ~~~ jQuery - client side ~~~ */ 
+//===========================================================================//
 
 $(function(){
 
-    // append p tags with translated words
+    //============================== Modules ==============================//
+            
+    // append p tags with translated words module
 	function addTheTranslation(array) {
 
 		$('.translation-container').empty();
@@ -24,6 +26,10 @@ $(function(){
 		});
 	}
 
+    //===========================================================================//
+                            /* ~~~ AJAX - Translation page ~~~ */ 
+    //===========================================================================//
+    
     // on submit event of form
 	$('.transForm').on('submit',function(event){
 		event.preventDefault()
